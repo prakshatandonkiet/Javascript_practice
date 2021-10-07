@@ -1,0 +1,48 @@
+(function display()
+{
+    console.log("this is iife")
+})()
+//called iife function
+
+//callback function
+
+function sum(num1,num2)
+{
+    return num1+num2
+}
+ function result(msg)
+ {
+     console.log(msg)
+ }
+  let r = sum(34,50)
+  result (`sum of two number=${r}`)
+  //second method for calling a call back function
+
+  function sum(num1,num2,dissum)
+  {
+      let r = num1+num2
+      dissum(`sum of two number =${r}`)
+  }
+   function result(msg)
+      {
+          console.log(msg)
+      }
+       sum(23,59,result)
+       
+       //
+       //callback function another method
+       function sum1(a,b,dissum1)
+       {
+           let r=a+b
+           dissum1(`sum of two number=${r}`)
+       }
+          function result1(message)
+          {
+              console.log(message)
+          }
+            function message(info)
+            {
+                console.log("new callback="+ info)
+            }
+             sum1(67,89,result1)
+             sum(67,89,message)
