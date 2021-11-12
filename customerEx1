@@ -1,0 +1,50 @@
+import java.util.Scanner;
+class InvalidInputException extends Exception
+{
+    public InvalidInputException()
+    {
+        System.out.println("InvalidInputException");
+    }
+}
+ class Customer
+{
+    private String custNo;
+    private String custName;
+    private String category;
+    
+    Customer( String a,String b,String c)
+    {
+        try
+        {
+            if(a.charAt(0)=='c' || a.charAt(0)=='C' && b.length()==4)
+            {
+                if(c.equals("gold") || c.equals("silver") || c.equals("platinum"))
+                {
+                this.custNo= a;
+                this.custName= b;
+                this.category= c;
+                }
+            }
+            else
+            {
+                throw new InvalidInputException();
+            }
+        }
+        catch(InvalidInputException e)
+        {
+            System.out.println(e);
+        }
+        
+    }
+    public class Cust
+    {
+        public void main(String[] args)
+        {
+            String a, b, c;
+            Scanner sc= new Scanner(System.in);
+            a=sc.next();
+            b=sc.next();
+            c=sc.next();
+        }
+    }
+}
