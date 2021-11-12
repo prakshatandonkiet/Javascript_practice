@@ -1,0 +1,33 @@
+package ThreadExample;
+
+public class FirstThread {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Iam in thread");
+		System.out.println("Thread Name="+Thread.currentThread().getName());
+        MyThread t1=new MyThread();
+        t1.setName("Thread1");
+        t1.start();
+        MyThread t2=new MyThread();
+        t2.setName("Thread2");
+        t2.start();
+	}
+
+}
+ class MyThread extends Thread
+ { 
+	  MyThread(String name)
+	  {
+		  super(name);
+	  }
+	 public MyThread() {
+		// TODO Auto-generated constructor stub
+	}
+	public void run()
+	 {
+		 System.out.println("I am in new Thread");
+		 System.out.println("Thread Name="+Thread.currentThread().getName());
+ }
+ }
+ 
